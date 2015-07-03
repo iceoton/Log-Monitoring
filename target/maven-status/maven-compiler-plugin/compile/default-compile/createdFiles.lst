@@ -1,0 +1,12 @@
+com/ascend/tmn/scouter/repository/LogDAO.class
+com/ascend/tmn/scouter/service/RobotCustomer.class
+com/ascend/tmn/scouter/service/LogService.class
+com/ascend/tmn/scouter/model/KiosHibernateLog.class
+com/ascend/tmn/scouter/repository/LogDAOHibernateImpl.class
+com/ascend/tmn/scouter/config/Configuration.class
+com/ascend/tmn/scouter/service/LogSimulatorService.class
+com/ascend/tmn/scouter/service/LogServiceImpl.class
+com/ascend/tmn/scouter/model/KiosLog.class
+com/ascend/tmn/scouter/service/LogSimulatorServiceImpl.class
+com/ascend/tmn/scouter/controller/LogSimulatorController.class
+com/ascend/tmn/scouter/model/PrepaidLog.class
