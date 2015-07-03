@@ -6,10 +6,13 @@
 </head>
 <body>
     All Log
+
     <c:forEach var="log" items="${logList}">
-        <tr>
-       <td><c:out value="${log.message}"/> </td><br />
-           </tr>>
+
+
+
+            <c:out value="${log.message}"/><br />
+        </tr>>
     </c:forEach>
 
 </body>

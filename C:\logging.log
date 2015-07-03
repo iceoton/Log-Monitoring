@@ -2501,3 +2501,230 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2015-07-03 10:35:09 DEBUG BootstrapServiceRegistryImpl:308 - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
 2015-07-03 10:35:09 DEBUG AbstractServiceRegistryImpl:406 - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
 2015-07-03 10:35:09 DEBUG DisposableBeanAdapter:245 - Invoking destroy() on bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2015-07-03 14:56:01 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 14:56:01 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c0880a8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2369bc4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f2c61fe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ad5934d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bb9db06]
+2015-07-03 14:56:01 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 14:56:02 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 14:56:02 ICT 2015]; root of context hierarchy
+2015-07-03 14:56:02 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 14:56:02 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 14:56:02 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 14:56:02 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 14:56:03 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 14:56:03 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:57:18 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 14:57:18 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 14:57:18 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 14:57:18 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:57:18 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:57:19 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4d77358f] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:57:19 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 14:57:19 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 14:57:19 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog] onto handler 'logSimulatorController'
+2015-07-03 14:57:19 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog.*] onto handler 'logSimulatorController'
+2015-07-03 14:57:19 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog/] onto handler 'logSimulatorController'
+2015-07-03 14:57:19 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 14:57:19 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 167 ms
+2015-07-03 14:57:19 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 14:56:02 ICT 2015]; root of context hierarchy
+2015-07-03 14:57:50 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 14:57:50 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c0880a8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2369bc4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f2c61fe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ad5934d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bb9db06]
+2015-07-03 14:57:50 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 14:57:51 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 14:57:51 ICT 2015]; root of context hierarchy
+2015-07-03 14:57:51 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 14:57:51 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 14:57:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 14:57:51 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 14:57:51 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 14:57:51 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 14:59:07 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 14:59:07 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 14:59:07 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 14:59:07 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 14:59:07 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 14:59:07 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1fccd900] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 14:59:07 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 14:59:07 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 14:59:07 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog] onto handler 'logSimulatorController'
+2015-07-03 14:59:07 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog.*] onto handler 'logSimulatorController'
+2015-07-03 14:59:07 INFO  DefaultAnnotationHandlerMapping:315 - Mapped URL path [//generateLog/] onto handler 'logSimulatorController'
+2015-07-03 14:59:07 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 14:59:07 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 153 ms
+2015-07-03 14:59:07 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 14:57:51 ICT 2015]; root of context hierarchy
+2015-07-03 15:03:50 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:03:50 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2369bc4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f2c61fe, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ad5934d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6bb9db06, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76da9e2a]
+2015-07-03 15:03:50 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:03:50 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2e3fe12e: startup date [Fri Jul 03 15:03:50 ICT 2015]; root of context hierarchy
+2015-07-03 15:03:50 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:03:50 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:03:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:03:51 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:03:51 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:03:51 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:05:06 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:05:06 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:05:06 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 15:05:06 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:05:06 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:05:07 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3b2b979d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:05:07 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:05:07 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:05:07 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:05:07 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 155 ms
+2015-07-03 15:06:22 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 08S01
+2015-07-03 15:06:22 ERROR SqlExceptionHelper:146 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:06:23 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2e3fe12e: startup date [Fri Jul 03 15:03:50 ICT 2015]; root of context hierarchy
+2015-07-03 15:08:37 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:08:37 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c0880a8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2369bc4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f2c61fe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ad5934d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bb9db06]
+2015-07-03 15:08:37 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:08:38 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:08:38 ICT 2015]; root of context hierarchy
+2015-07-03 15:08:38 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:08:38 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:08:38 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:08:38 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:08:38 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:08:38 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:09:54 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:09:54 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:09:54 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 15:09:54 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:09:54 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:09:54 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3b2b979d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:09:54 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:09:54 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:09:54 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:09:54 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 153 ms
+2015-07-03 15:11:10 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 08S01
+2015-07-03 15:11:10 ERROR SqlExceptionHelper:146 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:11:10 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:08:38 ICT 2015]; root of context hierarchy
+2015-07-03 15:17:55 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:17:55 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@432a44c3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@c0880a8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2369bc4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4f2c61fe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6ad5934d]
+2015-07-03 15:17:55 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:17:55 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:17:55 ICT 2015]; root of context hierarchy
+2015-07-03 15:17:55 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:17:55 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:17:56 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:17:56 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:17:56 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:17:56 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:19:11 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:19:11 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:19:11 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 15:19:11 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:19:11 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:19:11 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4d5d6704] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:19:12 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:19:12 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:19:12 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:19:12 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 150 ms
+2015-07-03 15:20:27 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 08S01
+2015-07-03 15:20:27 ERROR SqlExceptionHelper:146 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:20:27 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:17:55 ICT 2015]; root of context hierarchy
+2015-07-03 15:28:09 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:28:10 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f2c61fe, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6ad5934d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6bb9db06, org.springframework.test.context.transaction.TransactionalTestExecutionListener@76da9e2a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@ac6145c]
+2015-07-03 15:28:10 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:28:11 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@63d8aaba: startup date [Fri Jul 03 15:28:11 ICT 2015]; root of context hierarchy
+2015-07-03 15:28:11 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:28:12 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:28:12 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:28:12 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:28:12 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:28:12 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:29:28 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:29:28 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:29:28 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 15:29:28 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:29:28 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:29:29 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3b2b979d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:29:29 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:29:29 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:29:29 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:29:29 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 360 ms
+2015-07-03 15:30:44 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 08S01
+2015-07-03 15:30:44 ERROR SqlExceptionHelper:146 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:30:44 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@63d8aaba: startup date [Fri Jul 03 15:28:11 ICT 2015]; root of context hierarchy
+2015-07-03 15:39:55 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:39:55 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2369bc4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f2c61fe, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ad5934d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6bb9db06, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76da9e2a]
+2015-07-03 15:39:55 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:39:56 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2e3fe12e: startup date [Fri Jul 03 15:39:56 ICT 2015]; root of context hierarchy
+2015-07-03 15:39:56 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:39:56 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:39:56 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:39:56 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:39:56 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:39:56 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:41:11 WARN  JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:41:11 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:41:11 INFO  LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+2015-07-03 15:41:11 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:41:11 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:41:12 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@43311d3f] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:41:12 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:41:12 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:41:12 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:41:12 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 156 ms
+2015-07-03 15:42:27 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 08S01
+2015-07-03 15:42:27 ERROR SqlExceptionHelper:146 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2015-07-03 15:42:27 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2e3fe12e: startup date [Fri Jul 03 15:39:56 ICT 2015]; root of context hierarchy
+2015-07-03 15:48:28 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:48:28 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@c0880a8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2369bc4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f2c61fe, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ad5934d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bb9db06]
+2015-07-03 15:48:28 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:48:28 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:48:28 ICT 2015]; root of context hierarchy
+2015-07-03 15:48:28 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:48:29 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:48:29 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:48:29 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:48:29 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:48:29 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:48:30 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:48:30 INFO  LobCreatorBuilder:97 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-07-03 15:48:30 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:48:30 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:48:30 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4363cee2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:48:30 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:48:30 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:48:30 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:48:30 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 154 ms
+2015-07-03 15:48:32 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@2d10dd87: startup date [Fri Jul 03 15:48:28 ICT 2015]; root of context hierarchy
+2015-07-03 15:49:44 INFO  WebTestContextBootstrapper:255 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-07-03 15:49:44 INFO  WebTestContextBootstrapper:181 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@432a44c3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@c0880a8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2369bc4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4f2c61fe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6ad5934d]
+2015-07-03 15:49:44 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2015-07-03 15:49:44 INFO  GenericWebApplicationContext:510 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@76bfd849: startup date [Fri Jul 03 15:49:44 ICT 2015]; root of context hierarchy
+2015-07-03 15:49:45 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from URL [file:/Users/keerati/Documents/untitled1/target/classes/database.properties]
+2015-07-03 15:49:45 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-07-03 15:49:45 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2015-07-03 15:49:45 INFO  Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+2015-07-03 15:49:45 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-07-03 15:49:45 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2015-07-03 15:49:46 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:49:46 INFO  LobCreatorBuilder:97 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-07-03 15:49:47 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:49:47 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:49:47 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1f39b7bb] of Hibernate SessionFactory for HibernateTransactionManager
+2015-07-03 15:49:47 INFO  MockServletContext:444 - Initializing Spring FrameworkServlet ''
+2015-07-03 15:49:47 INFO  TestDispatcherServlet:484 - FrameworkServlet '': initialization started
+2015-07-03 15:49:47 INFO  DefaultAnnotationHandlerMapping:302 - Root mapping to handler 'logSimulatorController'
+2015-07-03 15:49:47 INFO  TestDispatcherServlet:503 - FrameworkServlet '': initialization completed in 151 ms
+2015-07-03 15:49:52 INFO  GenericWebApplicationContext:862 - Closing org.springframework.web.context.support.GenericWebApplicationContext@76bfd849: startup date [Fri Jul 03 15:49:44 ICT 2015]; root of context hierarchy

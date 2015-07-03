@@ -44,7 +44,7 @@ public class LogDAOHibernateImpl implements LogDAO {
     @Override
     public List<KiosHibernateLog> getLogKioshib() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<KiosHibernateLog> kiosHibernateLog = session.createQuery("from KioshibLog").list();
+        List<KiosHibernateLog> kiosHibernateLog = session.createQuery("from KiosHibernateLog").list();
         return kiosHibernateLog;
     }
 

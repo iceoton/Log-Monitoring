@@ -2,6 +2,7 @@ package com.ascend.tmn.scouter.controller;
 
 import com.ascend.tmn.scouter.service.LogServiceImpl;
 import com.ascend.tmn.scouter.service.RobotCustomer;
+import org.hibernate.exception.JDBCConnectionException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,12 +47,10 @@ public class LogSimulatorControllerTest extends Assert{
     }
 
     @Test
-    public void getAllLog__seriveDown__errorPageWasReturn(){
-        when(logServiceImplMock.getAllLog()).thenThrow(NullPointerException.class);
-        String result = logSimulatorController.getAllLog(new ModelMap());
-        assertEquals("error", result);
-
-
+    public void getAllLog__serviceDown__errorPageWasReturn(){
+       when(logServiceImplMock.getAllLog()).thenThrow(JDBCConnectionException.class);
+      String result = logSimulatorController.getAllLog(new ModelMap());
+      assertEquals("error", result);
     }
 
 

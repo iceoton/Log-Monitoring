@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
@@ -20,23 +19,24 @@ public class LogServiceImpl implements LogService {
     private LogDAO logDao;
     private List log;
     private List loghib;
-
     @Autowired
     private Configuration config;
 
     @Override
     public List getAllLog() {
-            if("kios".equalsIgnoreCase(config.getTableName())) {
+        String t = config.getTableName();
+            if ("kios".equalsIgnoreCase(config.getTableName())) {
 
-                log  = logDao.getKiosLog();
+                log = logDao.getKiosLog();
                 loghib = logDao.getLogKioshib();
-                log.addAll(loghib);
+
                 return log;
 
-            } else if("prepaid".equalsIgnoreCase(config.getTableName())) {
+            } else if ("prepaid".equalsIgnoreCase(config.getTableName())) {
                 log = logDao.getLogPrepaid();
                 return log;
             }
+
         return null;
 
     }
