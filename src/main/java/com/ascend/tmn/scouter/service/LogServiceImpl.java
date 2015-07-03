@@ -24,7 +24,6 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public List getAllLog() {
-        String t = config.getTableName();
             if ("kios".equalsIgnoreCase(config.getTableName())) {
 
                 log = logDao.getKiosLog();
