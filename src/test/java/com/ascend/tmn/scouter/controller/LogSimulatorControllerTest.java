@@ -2,6 +2,7 @@ package com.ascend.tmn.scouter.controller;
 
 import com.ascend.tmn.scouter.service.LogServiceImpl;
 import com.ascend.tmn.scouter.service.RobotCustomer;
+import org.hibernate.exception.JDBCConnectionException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +31,7 @@ public class LogSimulatorControllerTest extends Assert{
 
     @Test
     public void getAllLog__getViewAllLog__pageViewWasReturn(){
-        when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
+      when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
         String result = logSimulatorController.getAllLog(new ModelMap());
         assertEquals("allLog", result);
     }
@@ -46,10 +47,27 @@ public class LogSimulatorControllerTest extends Assert{
     }
 
     @Test
-    public void getAllLog__seriveDown__errorPageWasReturn(){
-        when(logServiceImplMock.getAllLog()).thenThrow(NullPointerException.class);
+    public void getAllLog__serviceDown__errorPageWasReturn(){
+       when(logServiceImplMock.getAllLog()).thenThrow(JDBCConnectionException.class);
+      String result = logSimulatorController.getAllLog(new ModelMap());
+      assertEquals("error", result);
+    }
+
+    @Test
+    public void getAllLog__logReturnNull__errorPageWasReturn(){
+      when(logServiceImplMock.getAllLog()).thenReturn(null);
         String result = logSimulatorController.getAllLog(new ModelMap());
-        assertEquals("error", result);
+        assertEquals("error",result);
+
+    }
+
+    @Test
+    public void getAllLog__messageOnErrorPafe_errorPageWasShowMessage(){
+        ModelMap model = new ModelMap();
+        String expect = "Database failed.";
+        when(logServiceImplMock.getAllLog()).thenReturn(null);
+        logSimulatorController.getAllLog(model);
+        assertEquals(model.get("errorMessage"),"Database failed.");
 
 
     }

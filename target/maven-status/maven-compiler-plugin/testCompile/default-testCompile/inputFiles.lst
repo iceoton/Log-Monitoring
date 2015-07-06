@@ -1,2 +1,3 @@
-/Users/keerati/Documents/untitled1/src/test/java/com/ascend/tmn/scouter/AppTests.java
+/Users/keerati/Documents/untitled1/src/test/java/com/ascend/tmn/scouter/repository/LogDAOHibernateImplTest.java
+/Users/keerati/Documents/untitled1/src/test/java/com/ascend/tmn/scouter/service/LogServiceImplTest.java
 /Users/keerati/Documents/untitled1/src/test/java/com/ascend/tmn/scouter/controller/LogSimulatorControllerTest.java

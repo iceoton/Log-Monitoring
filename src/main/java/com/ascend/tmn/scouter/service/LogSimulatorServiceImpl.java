@@ -4,10 +4,12 @@ import com.ascend.tmn.scouter.config.Configuration;
 import com.ascend.tmn.scouter.model.KiosLog;
 import com.ascend.tmn.scouter.model.KiosHibernateLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by keerati on 7/2/15 AD.
@@ -19,6 +21,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     /*
     * In millisecond
     */
+    Logger logger = Logger.getLogger(LogSimulatorService.class);
 
     @Autowired
     private Configuration config;
@@ -32,7 +35,8 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private long upperRandomSleepTimeRange;
     private long sleepTime;
     private String message;
-    private int logLineIndex;
+
+    private static Random random = new Random();
 
     public LogSimulatorServiceImpl() {
         this(0L, 5000L);
@@ -68,12 +72,19 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private void readLog() {
         logs = logService.getLog();
         loghib = logService.getLoghib();
+        int i = random.nextInt(logs.size()) ;
         if("prepaid".equals(config.getTableName())) {
-            this.message = ((PrepaidLog) logs.get(this.logLineIndex++ % logs.size())).getMessage();
+            this.message = ((PrepaidLog) logs.get( i )).getMessage();
         }
-        else if("kios".equals(config.getTableName())){
+        else if("kios".equals(config.getTableName())) {
+          if(logs.get(i) instanceof KiosLog ) {
+              this.message = ((KiosLog) logs.get(i)).getMessage();
+          }
+            else {
+              this.message = ((KiosHibernateLog) logs.get(i)).getMessage();
 
-            this.message = Math.random() > 0.5 ? ((KiosLog) logs.get(this.logLineIndex++ % logs.size())).getMessage() : ((KiosHibernateLog) loghib.get(this.logLineIndex++ % loghib.size())).getMessage();
+          }
+
         }
 
     }
@@ -92,7 +103,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
         logLine.append(this.sleepTime);
         logLine.append(" ms");
 
-        System.out.println(logLine);
+        logger.info(logLine);
 
     }
 

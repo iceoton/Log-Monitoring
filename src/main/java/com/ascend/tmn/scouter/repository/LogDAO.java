@@ -13,7 +13,7 @@ public interface LogDAO {
 
     public List<KiosLog> getKiosLog();
     public List<PrepaidLog> getLogPrepaid();
-    public List<KiosHibernateLog> getLogKioshib();
+    public List<KiosHibernateLog> getKiosHibernateLog();
 
 
 

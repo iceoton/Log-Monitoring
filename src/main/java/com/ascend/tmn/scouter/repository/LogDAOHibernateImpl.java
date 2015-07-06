@@ -3,6 +3,7 @@ package com.ascend.tmn.scouter.repository;
 import com.ascend.tmn.scouter.model.KiosLog;
 import com.ascend.tmn.scouter.model.KiosHibernateLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -29,7 +30,8 @@ public class LogDAOHibernateImpl implements LogDAO {
     @Override
     public List<KiosLog> getKiosLog() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<KiosLog> kiosList = session.createQuery("from KiosLog").list();
+        Query query = session.createQuery("from KiosLog");
+        List<KiosLog> kiosList = query.list();
         return kiosList;
 
     }
@@ -37,14 +39,16 @@ public class LogDAOHibernateImpl implements LogDAO {
     @Override
     public List<PrepaidLog> getLogPrepaid() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<PrepaidLog> prepaidLogList = session.createQuery("from PrepaidLog").list();
+        Query query = session.createQuery("from PrepaidLog");
+        List<PrepaidLog> prepaidLogList = query.list();
         return prepaidLogList;
     }
 
     @Override
-    public List<KiosHibernateLog> getLogKioshib() {
+    public List<KiosHibernateLog> getKiosHibernateLog() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<KiosHibernateLog> kiosHibernateLog = session.createQuery("from KioshibLog").list();
+        Query query = session.createQuery("from KiosHibernateLog");
+        List<KiosHibernateLog> kiosHibernateLog = query.list();
         return kiosHibernateLog;
     }
 
