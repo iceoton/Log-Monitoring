@@ -31,7 +31,7 @@ public class LogSimulatorControllerTest extends Assert{
 
     @Test
     public void getAllLog__getViewAllLog__pageViewWasReturn(){
-       when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
+      when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
         String result = logSimulatorController.getAllLog(new ModelMap());
         assertEquals("allLog", result);
     }
@@ -55,7 +55,7 @@ public class LogSimulatorControllerTest extends Assert{
 
     @Test
     public void getAllLog__logReturnNull__errorPageWasReturn(){
-        when(logServiceImplMock.getAllLog()).thenReturn(null);
+      when(logServiceImplMock.getAllLog()).thenReturn(null);
         String result = logSimulatorController.getAllLog(new ModelMap());
         assertEquals("error",result);
 

@@ -68,6 +68,12 @@
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
 
         <!-- Spring ORM support -->
         <dependency>
@@ -129,6 +135,8 @@
                     </includes>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
