@@ -10,15 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.net.ConnectException;
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class LogSimulatorController {
-   final static Logger logger = Logger.getLogger(LogSimulatorController.class);
-
     @Autowired
     private LogService logService;
 
@@ -46,7 +42,7 @@ public class LogSimulatorController {
             return "allLog";
         }
         else{
-            model.addAttribute("errorMessage","No table");
+            model.addAttribute("errorMessage","Database failed.");
             return "error";
 
         }

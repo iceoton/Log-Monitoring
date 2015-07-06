@@ -35,7 +35,8 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private long upperRandomSleepTimeRange;
     private long sleepTime;
     private String message;
-    private int logLineIndex;
+
+    private static Random random = new Random();
 
     public LogSimulatorServiceImpl() {
         this(0L, 5000L);
@@ -71,12 +72,19 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private void readLog() {
         logs = logService.getLog();
         loghib = logService.getLoghib();
+        int i = random.nextInt(logs.size()) ;
         if("prepaid".equals(config.getTableName())) {
-            this.message = ((PrepaidLog) logs.get(this.logLineIndex++ % logs.size())).getMessage();
+            this.message = ((PrepaidLog) logs.get( i )).getMessage();
         }
-        else if("kios".equals(config.getTableName())){
+        else if("kios".equals(config.getTableName())) {
+          if(logs.get(i) instanceof KiosLog ) {
+              this.message = ((KiosLog) logs.get(i)).getMessage();
+          }
+            else {
+              this.message = ((KiosHibernateLog) logs.get(i)).getMessage();
 
-            this.message = Math.random() > 0.5 ? ((KiosLog) logs.get(this.logLineIndex++ % logs.size() )).getMessage() : ((KiosHibernateLog) loghib.get(this.logLineIndex++ %loghib.size())).getMessage();
+          }
+
         }
 
     }

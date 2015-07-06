@@ -14,7 +14,6 @@ import java.util.List;
 @PropertySource("classpath:database.properties")
 @Service
 public class LogServiceImpl implements LogService {
-    final static Logger logger = Logger.getLogger(LogServiceImpl.class);
     @Autowired
     private LogDAO logDao;
     private List log;
@@ -27,8 +26,8 @@ public class LogServiceImpl implements LogService {
             if ("kios".equalsIgnoreCase(config.getTableName())) {
 
                 log = logDao.getKiosLog();
-                loghib = logDao.getLogKioshib();
-
+                loghib = logDao.getKiosHibernateLog();
+                log.addAll(loghib);
                 return log;
 
             } else if ("prepaid".equalsIgnoreCase(config.getTableName())) {

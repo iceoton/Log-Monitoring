@@ -31,7 +31,7 @@ public class LogSimulatorControllerTest extends Assert{
 
     @Test
     public void getAllLog__getViewAllLog__pageViewWasReturn(){
-        when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
+       when(logServiceImplMock.getAllLog()).thenReturn(new ArrayList());
         String result = logSimulatorController.getAllLog(new ModelMap());
         assertEquals("allLog", result);
     }
@@ -51,6 +51,25 @@ public class LogSimulatorControllerTest extends Assert{
        when(logServiceImplMock.getAllLog()).thenThrow(JDBCConnectionException.class);
       String result = logSimulatorController.getAllLog(new ModelMap());
       assertEquals("error", result);
+    }
+
+    @Test
+    public void getAllLog__logReturnNull__errorPageWasReturn(){
+        when(logServiceImplMock.getAllLog()).thenReturn(null);
+        String result = logSimulatorController.getAllLog(new ModelMap());
+        assertEquals("error",result);
+
+    }
+
+    @Test
+    public void getAllLog__messageOnErrorPafe_errorPageWasShowMessage(){
+        ModelMap model = new ModelMap();
+        String expect = "Database failed.";
+        when(logServiceImplMock.getAllLog()).thenReturn(null);
+        logSimulatorController.getAllLog(model);
+        assertEquals(model.get("errorMessage"),"Database failed.");
+
+
     }
 
 
