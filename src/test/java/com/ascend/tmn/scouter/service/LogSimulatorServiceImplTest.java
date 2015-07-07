@@ -16,9 +16,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-/**
- * Created by keerati on 7/6/15 AD.
- */
 @RunWith(MockitoJUnitRunner.class)
 public class LogSimulatorServiceImplTest extends Assert{
     @InjectMocks
@@ -50,7 +47,7 @@ public class LogSimulatorServiceImplTest extends Assert{
             when(configurationMock.getTableName()).thenReturn("prepaid");
             when(this.prepaidLogList.get(anyInt())).thenReturn(prepaidLog);
 
-//            logSimulatorServiceImplMock.generateLog();
+
         Thread t = new Thread(){
             public void run(){
                 logSimulatorServiceImplMock.generateLog();
