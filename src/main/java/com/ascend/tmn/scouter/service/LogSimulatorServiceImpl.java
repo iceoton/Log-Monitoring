@@ -11,9 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by keerati on 7/2/15 AD.
- */
 @Service
 public class LogSimulatorServiceImpl implements LogSimulatorService {
 
@@ -52,7 +49,6 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     @Override
     public void generateLog() {
-        int i =2;
         while (true) {
             this.randomSleep();
             try {
@@ -66,8 +62,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     }
     private void randomSleep() {
-        this.sleepTime =  this.lowerRandomSleepTimeRange + (long) ((this.upperRandomSleepTimeRange - this.lowerRandomSleepTimeRange) * Math.random());
-
+        this.sleepTime = (long) (Math.random() * (this.upperRandomSleepTimeRange - this.lowerRandomSleepTimeRange)) + this.lowerRandomSleepTimeRange;
     }
 
     private void readLog() {
