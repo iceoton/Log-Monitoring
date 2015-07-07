@@ -11,9 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by keerati on 7/2/15 AD.
- */
 @Service
 public class LogSimulatorServiceImpl implements LogSimulatorService {
 
@@ -65,8 +62,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     }
     private void randomSleep() {
-        this.sleepTime =  this.lowerRandomSleepTimeRange + (long) ((this.upperRandomSleepTimeRange - this.lowerRandomSleepTimeRange) * Math.random());
-
+        this.sleepTime = (long) (Math.random() * (this.upperRandomSleepTimeRange - this.lowerRandomSleepTimeRange)) + this.lowerRandomSleepTimeRange;
     }
 
     private void readLog() {
@@ -74,7 +70,9 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
         loghib = logService.getLoghib();
         int i = random.nextInt(logs.size()) ;
         if("prepaid".equals(config.getTableName())) {
-            this.message = ((PrepaidLog) logs.get( i )).getMessage();
+            PrepaidLog prepaidLog = (PrepaidLog)logs.get(i);
+            this.message = prepaidLog.getMessage();
+
         }
         else if("kios".equals(config.getTableName())) {
           if(logs.get(i) instanceof KiosLog ) {
