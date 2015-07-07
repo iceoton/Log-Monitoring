@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
  * Created by keerati on 7/6/15 AD.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class LogSimulatorServiceTest extends Assert{
+public class LogSimulatorServiceImplTest extends Assert{
     @InjectMocks
     LogSimulatorServiceImpl logSimulatorServiceImplMock;
     @Mock
