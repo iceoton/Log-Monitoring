@@ -52,6 +52,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     @Override
     public void generateLog() {
+        int i =2;
         while (true) {
             this.randomSleep();
             try {
@@ -74,7 +75,9 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
         loghib = logService.getLoghib();
         int i = random.nextInt(logs.size()) ;
         if("prepaid".equals(config.getTableName())) {
-            this.message = ((PrepaidLog) logs.get( i )).getMessage();
+            PrepaidLog prepaidLog = (PrepaidLog)logs.get(i);
+            this.message = prepaidLog.getMessage();
+
         }
         else if("kios".equals(config.getTableName())) {
           if(logs.get(i) instanceof KiosLog ) {
