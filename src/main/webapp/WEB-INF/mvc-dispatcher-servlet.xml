@@ -11,11 +11,11 @@
 
 
     <bean id="robotCustomer1" class="com.ascend.tmn.scouter.service.RobotCustomer">
-        <property name="name" value="rang"/>
+        <property name="name" value="1"/>
 
     </bean>
     <bean id="robotCustomer2" class="com.ascend.tmn.scouter.service.RobotCustomer">
-        <property name="name" value="boss"/>
+        <property name="name" value="2"/>
 
     </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -1,3 +1,7 @@
-com/ascend/tmn/scouter/service/LogServiceImplTest.class
-com/ascend/tmn/scouter/repository/LogDAOHibernateImplTest.class
-com/ascend/tmn/scouter/controller/LogSimulatorControllerTest.class
+com\ascend\tmn\scouter\service\LogSimulatorServiceTest$1.class
+com\ascend\tmn\scouter\repository\LogDAOHibernateImplTest.class
+com\ascend\tmn\scouter\controller\LogSimulatorControllerTest.class
+com\ascend\tmn\scouter\service\LogServiceImplTest.class
+com\ascend\tmn\scouter\service\LogSimulatorServiceTest.class
+com\ascend\tmn\scouter\service\RobotCustomerTest.class
+com\ascend\tmn\scouter\service\LogSimulatorServiceTest$2.class
