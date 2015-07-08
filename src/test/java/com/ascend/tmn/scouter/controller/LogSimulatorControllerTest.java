@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.ui.ModelMap;
+import sun.awt.SunToolkit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +27,9 @@ public class LogSimulatorControllerTest extends Assert{
     @Mock
     LogServiceImpl logServiceImplMock;
     @Mock
-    RobotCustomer robotCustomer1;
+    RobotCustomer robotCustomer1Mock;
     @Mock
-    RobotCustomer robotCustomer2;
+    RobotCustomer robotCustomer2Mock;
 
     @Test
     public void getAllLog__getViewAllLog__pageViewWasReturn(){
@@ -62,9 +64,9 @@ public class LogSimulatorControllerTest extends Assert{
     }
 
     @Test
-    public void getAllLog__messageOnErrorPafe_errorPageWasShowMessage(){
+    public void getAllLog__messageOnErrorPage__errorPageWasShowMessage(){
         ModelMap model = new ModelMap();
-        String expect = "Database failed.";
+        String expect = "Database connection failed.";
         when(logServiceImplMock.getAllLog()).thenReturn(null);
         logSimulatorController.getAllLog(model);
         assertEquals(model.get("errorMessage"),"Database failed.");

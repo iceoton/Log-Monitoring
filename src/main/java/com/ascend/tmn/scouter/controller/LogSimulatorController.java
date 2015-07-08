@@ -36,6 +36,7 @@ public class LogSimulatorController {
             return "error";
         }
         catch (Exception e){
+            e.printStackTrace();
             model.addAttribute("errorMessage","Thread Exception.");
             return "error";
         }

@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="kioshib")
-public class KiosHibernateLog  {
+public class KioskHibernateLog {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)

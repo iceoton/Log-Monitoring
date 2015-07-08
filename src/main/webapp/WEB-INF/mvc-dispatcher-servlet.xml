@@ -40,8 +40,8 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-                <value>com.ascend.tmn.scouter.model.KiosLog</value>
-                <value>com.ascend.tmn.scouter.model.KiosHibernateLog</value>
+                <value>com.ascend.tmn.scouter.model.KioskLog</value>
+                <value>com.ascend.tmn.scouter.model.KioskHibernateLog</value>
                 <value>com.ascend.tmn.scouter.model.PrepaidLog</value>
             </list>
         </property>

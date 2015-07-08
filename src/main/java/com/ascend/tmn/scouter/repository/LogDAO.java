@@ -1,7 +1,7 @@
 package com.ascend.tmn.scouter.repository;
 
-import com.ascend.tmn.scouter.model.KiosLog;
-import com.ascend.tmn.scouter.model.KiosHibernateLog;
+import com.ascend.tmn.scouter.model.KioskLog;
+import com.ascend.tmn.scouter.model.KioskHibernateLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.List;
  */
 public interface LogDAO {
 
-    public List<KiosLog> getKiosLog();
+    public List<KioskLog> getKiosLog();
     public List<PrepaidLog> getLogPrepaid();
-    public List<KiosHibernateLog> getKiosHibernateLog();
+    public List<KioskHibernateLog> getKiosHibernateLog();
 
 
 

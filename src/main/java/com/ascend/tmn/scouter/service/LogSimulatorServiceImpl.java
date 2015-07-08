@@ -1,8 +1,8 @@
 package com.ascend.tmn.scouter.service;
 
 import com.ascend.tmn.scouter.config.Configuration;
-import com.ascend.tmn.scouter.model.KiosLog;
-import com.ascend.tmn.scouter.model.KiosHibernateLog;
+import com.ascend.tmn.scouter.model.KioskLog;
+import com.ascend.tmn.scouter.model.KioskHibernateLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
 import org.apache.log4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,18 +80,18 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     private void readLog() {
         logs = logService.getLog();
-        loghib = logService.getLoghib();
-        int i = random.nextInt(logs.size());
+
+        int index = random.nextInt(logs.size());
         if ("prepaid".equals(config.getTableName())) {
-            PrepaidLog prepaidLog = (PrepaidLog) logs.get(i);
+            PrepaidLog prepaidLog = (PrepaidLog) logs.get(index);
             this.message = prepaidLog.getMessage();
 
         } else if ("kios".equals(config.getTableName())) {
-            if (logs.get(i) instanceof KiosLog) {
-                this.message = ((KiosLog) logs.get(i)).getMessage();
+            if (logs.get(index) instanceof KioskLog) {
+                this.message = ((KioskLog) logs.get(index)).getMessage();
                 this.isHibernate = false;
             } else {
-                this.message = ((KiosHibernateLog) logs.get(i)).getMessage();
+                this.message = ((KioskHibernateLog) logs.get(index)).getMessage();
                 this.isHibernate = true;
             }
 
@@ -144,12 +144,12 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     private void setUpLog4J() {
         try {
-            if(config.getTableName().equalsIgnoreCase("prepaid")) {
+            if("prepaid".equalsIgnoreCase(config.getTableName())) {
                 layout = new PatternLayout("%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/prepaidLog.log");
-            }else if(config.getTableName().equalsIgnoreCase("kios")){
+            }else if("kios".equalsIgnoreCase(config.getTableName())){
                 layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss} ICT] %m%n");
-                fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/kiosLog.log");
+                fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/kioskLog.log");
             }
 
         }catch(IOException e) {

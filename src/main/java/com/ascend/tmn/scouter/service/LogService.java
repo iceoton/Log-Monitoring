@@ -1,7 +1,7 @@
 package com.ascend.tmn.scouter.service;
 
 
-import com.ascend.tmn.scouter.model.KiosLog;
+import com.ascend.tmn.scouter.model.KioskLog;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface LogService {
 
-    public List<KiosLog> getAllLog();
+    public List<KioskLog> getAllLog();
 
 
 }

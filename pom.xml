@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.springapp</groupId>
-    <artifactId>untitled1</artifactId>
+    <artifactId>LogSimulator</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>LogSimulator</name>
 
     <properties>
@@ -112,7 +112,7 @@
     </dependencies>
 
     <build>
-        <finalName>untitled1</finalName>
+        <finalName>LogSim</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

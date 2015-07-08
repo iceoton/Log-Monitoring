@@ -1,7 +1,7 @@
 package com.ascend.tmn.scouter.service;
 
 import com.ascend.tmn.scouter.config.Configuration;
-import com.ascend.tmn.scouter.model.KiosLog;
+import com.ascend.tmn.scouter.model.KioskLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
 import com.ascend.tmn.scouter.repository.LogDAOHibernateImpl;
 import org.junit.Assert;
@@ -46,7 +46,7 @@ public class LogServiceImplTest extends Assert{
 
         when(configurationMock.getTableName()).thenReturn("kios");
         List expect= new ArrayList<PrepaidLog>();
-        KiosLog temp = new KiosLog();
+        KioskLog temp = new KioskLog();
         temp.setId(1);
         temp.setMessage("kios message");
         expect.add(temp);
