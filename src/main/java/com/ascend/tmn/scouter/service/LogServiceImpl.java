@@ -23,6 +23,7 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public List getAllLog() {
+
             if ("kios".equalsIgnoreCase(config.getTableName())) {
 
                 log = logDao.getKiosLog();
