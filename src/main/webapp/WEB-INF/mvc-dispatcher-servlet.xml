@@ -9,13 +9,24 @@
 
     <context:property-placeholder location="classpath*:database.properties" />
 
+    <bean id="config" class="com.ascend.tmn.scouter.config.Configuration">
+
+    </bean>
 
     <bean id="robotCustomer1" class="com.ascend.tmn.scouter.service.RobotCustomer">
+<<<<<<< HEAD
         <property name="name" value="1"/>
 
     </bean>
     <bean id="robotCustomer2" class="com.ascend.tmn.scouter.service.RobotCustomer">
         <property name="name" value="2"/>
+=======
+        <property name="name" value="Thread 1"/>
+
+    </bean>
+    <bean id="robotCustomer2" class="com.ascend.tmn.scouter.service.RobotCustomer">
+        <property name="name" value="Thread 2"/>
+>>>>>>> develop
 
     </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -37,8 +48,8 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-                <value>com.ascend.tmn.scouter.model.KiosLog</value>
-                <value>com.ascend.tmn.scouter.model.KiosHibernateLog</value>
+                <value>com.ascend.tmn.scouter.model.KioskLog</value>
+                <value>com.ascend.tmn.scouter.model.KioskHibernateLog</value>
                 <value>com.ascend.tmn.scouter.model.PrepaidLog</value>
             </list>
         </property>

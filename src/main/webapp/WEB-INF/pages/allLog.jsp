@@ -3,16 +3,19 @@
 <html>
 <head>
     <title></title>
+    <style>
+        .log{
+            white-space: nowrap;
+        }
+
+    </style>
 </head>
 <body>
-    All Log
-
+    <h1>All Log</h1>
+    <br>
     <c:forEach var="log" items="${logList}">
-
-
-
-            <c:out value="${log.message}"/><br />
-        </tr>>
+        <div class="log"><c:out value="${log.message}"/></div>
+        <hr />
     </c:forEach>
 
 </body>

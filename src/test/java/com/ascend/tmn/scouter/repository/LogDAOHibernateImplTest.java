@@ -1,7 +1,7 @@
 package com.ascend.tmn.scouter.repository;
 
-import com.ascend.tmn.scouter.model.KiosHibernateLog;
-import com.ascend.tmn.scouter.model.KiosLog;
+import com.ascend.tmn.scouter.model.KioskHibernateLog;
+import com.ascend.tmn.scouter.model.KioskLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -36,13 +36,13 @@ public class LogDAOHibernateImplTest extends Assert {
 
     @Test
     public void getKiosLog__getKiosLog__kiosLogWasReturn(){
-        List<KiosLog> expect = new ArrayList<KiosLog>();
-        KiosLog kiosLog = new KiosLog();
-        kiosLog.setId(1);
-        kiosLog.setMessage("kios message");
+        List<KioskLog> expect = new ArrayList<KioskLog>();
+        KioskLog kioskLog = new KioskLog();
+        kioskLog.setId(1);
+        kioskLog.setMessage("kios message");
         when(sessionFactoryMock.getCurrentSession()).thenReturn(sessionMock);
         when(sessionMock.createQuery("from KiosLog")).thenReturn(queryMock);
-        List<KiosLog> actual = logDAOHibernateMock.getKiosLog();
+        List<KioskLog> actual = logDAOHibernateMock.getKiosLog();
         assertEquals(expect,actual);
 
 
@@ -63,12 +63,12 @@ public class LogDAOHibernateImplTest extends Assert {
     }
     @Test
    public void getKiosLog__getKiosHibernateLog__KiosHibernateLogWasReturn(){
-       List<KiosHibernateLog> expect = new ArrayList<KiosHibernateLog>();
-       KiosHibernateLog kiosHibernateLog = new KiosHibernateLog();
-       kiosHibernateLog.setId(1);
-       kiosHibernateLog.setMessage("kiosHibernate message");when(sessionFactoryMock.getCurrentSession()).thenReturn(sessionMock);
+       List<KioskHibernateLog> expect = new ArrayList<KioskHibernateLog>();
+       KioskHibernateLog kioskHibernateLog = new KioskHibernateLog();
+       kioskHibernateLog.setId(1);
+       kioskHibernateLog.setMessage("kiosHibernate message");when(sessionFactoryMock.getCurrentSession()).thenReturn(sessionMock);
        when(sessionMock.createQuery("from KiosHibernateLog")).thenReturn(queryMock);
-       List<KiosHibernateLog> actual = logDAOHibernateMock.getKiosHibernateLog();
+       List<KioskHibernateLog> actual = logDAOHibernateMock.getKiosHibernateLog();
        assertEquals(expect,actual);
 
     }

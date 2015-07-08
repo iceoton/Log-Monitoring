@@ -1,7 +1,7 @@
 package com.ascend.tmn.scouter.repository;
 
-import com.ascend.tmn.scouter.model.KiosLog;
-import com.ascend.tmn.scouter.model.KiosHibernateLog;
+import com.ascend.tmn.scouter.model.KioskLog;
+import com.ascend.tmn.scouter.model.KioskHibernateLog;
 import com.ascend.tmn.scouter.model.PrepaidLog;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -22,19 +22,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Repository
 public class LogDAOHibernateImpl implements LogDAO {
-    final static Logger logger = Logger.getLogger(LogDAOHibernateImpl.class);
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Override
-    public List<KiosLog> getKiosLog() {
-        Session session = this.sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from KiosLog");
-        List<KiosLog> kiosList = query.list();
-        return kiosList;
 
-    }
 
     @Override
     public List<PrepaidLog> getLogPrepaid() {
@@ -43,13 +35,20 @@ public class LogDAOHibernateImpl implements LogDAO {
         List<PrepaidLog> prepaidLogList = query.list();
         return prepaidLogList;
     }
-
     @Override
-    public List<KiosHibernateLog> getKiosHibernateLog() {
+    public List<KioskLog> getKiosLog() {
         Session session = this.sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from KiosHibernateLog");
-        List<KiosHibernateLog> kiosHibernateLog = query.list();
-        return kiosHibernateLog;
+        Query query = session.createQuery("from KioskLog");
+        List<KioskLog> kiosList = query.list();
+        return kiosList;
+
+    }
+    @Override
+    public List<KioskHibernateLog> getKiosHibernateLog() {
+        Session session = this.sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from KioskHibernateLog");
+        List<KioskHibernateLog> kioskHibernateLog = query.list();
+        return kioskHibernateLog;
     }
 
 

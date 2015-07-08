@@ -35,10 +35,24 @@ public class LogSimulatorController {
             model.addAttribute("errorMessage","Database connection failed.");
             return "error";
         }
+        catch (Exception e){
+            e.printStackTrace();
+            model.addAttribute("errorMessage","Thread Exception.");
+            return "error";
+        }
         if(log!=null) {
-            robotCustomer1.start();
-            robotCustomer2.start();
-            model.addAttribute("logList", log);
+            try {
+                robotCustomer1.start();
+                robotCustomer2.start();
+            }catch(IllegalThreadStateException e) {
+                e.printStackTrace();
+
+
+            }
+            finally {
+                model.addAttribute("logList", log);
+
+            }
             return "allLog";
         }
         else{

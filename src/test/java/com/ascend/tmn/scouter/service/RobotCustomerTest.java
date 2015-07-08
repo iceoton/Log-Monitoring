@@ -12,13 +12,13 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class RobotCustomerTest {
     @InjectMocks
-    RobotCustomer robotCustomerMock;
+    RobotCustomer robotCustomerMock ;
     @Mock
     LogSimulatorService logSimulatorServiceMock;
     @Test
     public void run_runLogSim_LogSimIsRun() {
-     robotCustomerMock.start();
-     verify(logSimulatorServiceMock,atLeastOnce()).generateLog();
 
+        robotCustomerMock.start();
+        verify(logSimulatorServiceMock,atLeastOnce()).generateLog();
     }
 }
