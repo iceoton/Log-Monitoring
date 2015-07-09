@@ -9,10 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.ui.ModelMap;
-import sun.awt.SunToolkit;
-
 import java.util.ArrayList;
 import java.util.List;
 

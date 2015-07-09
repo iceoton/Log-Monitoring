@@ -14,21 +14,17 @@
     </bean>
 
     <bean id="robotCustomer1" class="com.ascend.tmn.scouter.service.RobotCustomer">
-<<<<<<< HEAD
+
         <property name="name" value="1"/>
 
     </bean>
     <bean id="robotCustomer2" class="com.ascend.tmn.scouter.service.RobotCustomer">
         <property name="name" value="2"/>
-=======
-        <property name="name" value="Thread 1"/>
+
+
 
     </bean>
-    <bean id="robotCustomer2" class="com.ascend.tmn.scouter.service.RobotCustomer">
-        <property name="name" value="Thread 2"/>
->>>>>>> develop
 
-    </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
