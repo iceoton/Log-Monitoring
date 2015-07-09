@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.ui.ModelMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,9 @@ public class LogSimulatorControllerTest extends Assert{
     @Mock
     LogServiceImpl logServiceImplMock;
     @Mock
-    RobotCustomer robotCustomer1Mock;
+    RobotCustomer robotCustomer1;
     @Mock
-    RobotCustomer robotCustomer2Mock;
+    RobotCustomer robotCustomer2;
 
     @Test
     public void getAllLog__getViewAllLog__pageViewWasReturn(){
@@ -47,7 +48,7 @@ public class LogSimulatorControllerTest extends Assert{
 
     @Test
     public void getAllLog__serviceDown__errorPageWasReturn(){
-       when(logServiceImplMock.getAllLog()).thenThrow(JDBCConnectionException.class);
+       when(logServiceImplMock.getAllLog()).thenThrow(CannotCreateTransactionException.class);
       String result = logSimulatorController.getAllLog(new ModelMap());
       assertEquals("error", result);
     }

@@ -129,7 +129,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
             logLine.append(separator);
             logLine.append("4");
             logLine.append(separator);
-            logLine.append(this.getClass().getName());
+            logLine.append(this.getClass().getSimpleName());
             logLine.append(separator);
             logLine.append("INFO");
             logLine.append(separator);

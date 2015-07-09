@@ -18,7 +18,7 @@ public class RobotCustomerTest {
     @Test
     public void run_runLogSim_LogSimIsRun() {
 
-        robotCustomerMock.start();
+        robotCustomerMock.run();
         verify(logSimulatorServiceMock,atLeastOnce()).generateLog();
     }
 }

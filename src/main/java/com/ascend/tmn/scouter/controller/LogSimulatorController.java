@@ -7,6 +7,7 @@ import org.hibernate.exception.JDBCConnectionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,13 +32,14 @@ public class LogSimulatorController {
         try {
              log = logService.getAllLog();
         }
-        catch(JDBCConnectionException e) {
+        catch(CannotCreateTransactionException e) {
             model.addAttribute("errorMessage","Database connection failed.");
             return "error";
         }
+
         catch (Exception e){
             e.printStackTrace();
-            model.addAttribute("errorMessage","Thread Exception.");
+            model.addAttribute("errorMessage","Internal Error.");
             return "error";
         }
         if(log!=null) {
@@ -46,8 +48,6 @@ public class LogSimulatorController {
                 robotCustomer2.start();
             }catch(IllegalThreadStateException e) {
                 e.printStackTrace();
-
-
             }
             finally {
                 model.addAttribute("logList", log);

@@ -41,7 +41,7 @@ public class LogDAOHibernateImplTest extends Assert {
         kioskLog.setId(1);
         kioskLog.setMessage("kios message");
         when(sessionFactoryMock.getCurrentSession()).thenReturn(sessionMock);
-        when(sessionMock.createQuery("from KiosLog")).thenReturn(queryMock);
+        when(sessionMock.createQuery("from KioskLog")).thenReturn(queryMock);
         List<KioskLog> actual = logDAOHibernateMock.getKiosLog();
         assertEquals(expect,actual);
 
@@ -67,7 +67,7 @@ public class LogDAOHibernateImplTest extends Assert {
        KioskHibernateLog kioskHibernateLog = new KioskHibernateLog();
        kioskHibernateLog.setId(1);
        kioskHibernateLog.setMessage("kiosHibernate message");when(sessionFactoryMock.getCurrentSession()).thenReturn(sessionMock);
-       when(sessionMock.createQuery("from KiosHibernateLog")).thenReturn(queryMock);
+       when(sessionMock.createQuery("from KioskHibernateLog")).thenReturn(queryMock);
        List<KioskHibernateLog> actual = logDAOHibernateMock.getKiosHibernateLog();
        assertEquals(expect,actual);
 
