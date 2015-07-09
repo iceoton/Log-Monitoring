@@ -23,6 +23,7 @@ public class LogSimulatorController {
     @Qualifier("robotCustomer1")
     private RobotCustomer robotCustomer1;
 
+
     @Autowired
     @Qualifier("robotCustomer2")
     private RobotCustomer robotCustomer2;
@@ -33,6 +34,7 @@ public class LogSimulatorController {
              log = logService.getAllLog();
         }
         catch(CannotCreateTransactionException e) {
+            e.printStackTrace();
             model.addAttribute("errorMessage","Database connection failed.");
             return "error";
         }
@@ -44,6 +46,8 @@ public class LogSimulatorController {
         }
         if(log!=null) {
             try {
+
+
                 robotCustomer1.start();
                 robotCustomer2.start();
             }catch(IllegalThreadStateException e) {

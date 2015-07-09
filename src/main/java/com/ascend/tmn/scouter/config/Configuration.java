@@ -12,11 +12,15 @@ import org.springframework.stereotype.Component;
 public class Configuration {
 
 
-    @Value("${mysql.table}")
-    private String tableName;
+
+    private static String tableName;
 
     private long lowerRandomSleepTimeRange = 0L;
-    private long upperRandomSleepTimeRange = 500L;
+    private long upperRandomSleepTimeRange = 1000L;
+
+    public Configuration() {
+        tableName = System.getenv("TABLE_NAME");
+    }
 
     public long getUpperRandomSleepTimeRange() {
         return upperRandomSleepTimeRange;

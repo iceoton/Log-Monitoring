@@ -33,7 +33,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private long sleepTime;
     private String message;
 
-    private  Random random = new Random();
+    private static Random random = new Random();
     PatternLayout layout = null;
     RollingFileAppender fileAppender = null;
     private boolean isHibernate;
@@ -148,7 +148,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
                 layout = new PatternLayout("%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/prepaidLog.log");
             }else if("kios".equalsIgnoreCase(config.getTableName())){
-                layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss} ICT] %m%n");
+                layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss.SSS:} ICT] %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/kioskLog.log");
             }
 
