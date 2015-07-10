@@ -102,10 +102,10 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private synchronized void writeLogPrePaid() {
         final String separator = ", ";
         StringBuilder logLine = new StringBuilder();
-        logLine.append("Thread name: ");
-        logLine.append(Thread.currentThread().getName());
-        logLine.append(separator);
-        logLine.append(this.getClass().getPackage());
+//        logLine.append("Thread name: ");
+//        logLine.append(Thread.currentThread().getName());
+//        logLine.append(separator);
+        logLine.append(this.getClass().getPackage().toString().replace("package ",""));
         logLine.append("Message: ");
         logLine.append(this.message);
         logLine.append(separator);
@@ -131,7 +131,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
             logLine.append(separator);
             logLine.append(this.getClass().getSimpleName());
             logLine.append(separator);
-            logLine.append("INFO");
+            logLine.append(" INFO");
             logLine.append(separator);
             logLine.append("85");
             logLine.append(separator);
@@ -145,10 +145,10 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     private void setUpLog4J() {
         try {
             if("prepaid".equalsIgnoreCase(config.getTableName())) {
-                layout = new PatternLayout("%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n");
+                layout = new PatternLayout("%-5p %d{yyyy-MM-dd HH:mm:ss,SSS} %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/prepaidLog.log");
             }else if("kios".equalsIgnoreCase(config.getTableName())){
-                layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss.SSS:} ICT] %m%n");
+                layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss:SSS} ICT] %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/kioskLog.log");
             }
 
