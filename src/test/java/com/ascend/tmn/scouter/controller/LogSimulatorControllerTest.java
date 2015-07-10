@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.ui.ModelMap;
@@ -52,7 +53,6 @@ public class LogSimulatorControllerTest extends Assert{
       String result = logSimulatorController.getAllLog(new ModelMap());
       assertEquals("error", result);
     }
-
     @Test
     public void getAllLog__logReturnNull__errorPageWasReturn(){
       when(logServiceImplMock.getAllLog()).thenReturn(null);
@@ -60,19 +60,26 @@ public class LogSimulatorControllerTest extends Assert{
         assertEquals("error",result);
 
     }
-
-    @Test
+     @Test
     public void getAllLog__messageOnErrorPage__errorPageWasShowMessage(){
         ModelMap model = new ModelMap();
         String expect = "Database connection failed.";
         when(logServiceImplMock.getAllLog()).thenReturn(null);
         logSimulatorController.getAllLog(model);
         assertEquals(model.get("errorMessage"),"Database failed.");
-
+    }
+    @Test
+    public void gettAllLog__interNalError__errorPageWasReturn(){
+        when(logServiceImplMock.getAllLog()).thenThrow(Exception.class);
+        String result = logSimulatorController.getAllLog(new ModelMap());
+        assertEquals("error", result);
 
     }
-
-
-
+    @Test
+    public void getAllLog__illegalThreadException__allLogWasreturn(){
+        Mockito.doThrow(IllegalThreadStateException.class).when(robotCustomer1).start();
+        String result = logSimulatorController.getAllLog(new ModelMap());
+        assertEquals("allLog", result);
+    }
 
 }
