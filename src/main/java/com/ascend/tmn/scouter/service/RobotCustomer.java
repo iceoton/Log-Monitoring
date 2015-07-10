@@ -3,6 +3,8 @@ package com.ascend.tmn.scouter.service;
 import com.ascend.tmn.scouter.service.LogSimulatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Set;
+
 /**
  * Created by keerati on 7/2/15 AD.
  */
@@ -14,7 +16,14 @@ public class RobotCustomer extends Thread {
 
     @Override
     public void run() {
-
+        Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+        System.out.println("Current thread name: " + Thread.currentThread().getName());
+        for (Thread thread : threadSet) {
+            System.out.println("Thread name: " + thread.getName());
+            if ( thread.getName().equals(Thread.currentThread().getName()) ) {
+                thread.interrupt();
+            }
+        }
         logSimulatorService.generateLog();
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/")
@@ -46,8 +47,6 @@ public class LogSimulatorController {
         }
         if(log!=null) {
             try {
-
-
                 robotCustomer1.start();
                 robotCustomer2.start();
             }catch(IllegalThreadStateException e) {

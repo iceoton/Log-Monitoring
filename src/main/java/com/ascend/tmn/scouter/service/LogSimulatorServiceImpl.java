@@ -53,6 +53,7 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 
     @Override
     public void generateLog() {
+        logs = logService.getLog();
         setUpLog4J();
         while (true) {
             this.randomSleep();
@@ -79,8 +80,6 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     }
 
     private void readLog() {
-        logs = logService.getLog();
-
         int index = random.nextInt(logs.size());
         if ("prepaid".equals(config.getTableName())) {
             PrepaidLog prepaidLog = (PrepaidLog) logs.get(index);
