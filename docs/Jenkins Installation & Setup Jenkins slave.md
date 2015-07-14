@@ -48,3 +48,5 @@
 12. Scroll down to `JDK` section, Click <kbd>Add JDK</kbd> and fill in the following path. Then, click <kbd>Save</kbd>.
 ![](img/jenkins-conf-3.png)
 
+
+

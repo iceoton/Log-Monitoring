@@ -16,9 +16,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-/**
- * Created by keerati on 7/3/15 AD.
- */
 @RunWith(MockitoJUnitRunner.class)
 public class LogServiceImplTest extends Assert{
     @InjectMocks

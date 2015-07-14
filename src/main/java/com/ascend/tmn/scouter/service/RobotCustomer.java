@@ -5,10 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
-/**
- * Created by keerati on 7/2/15 AD.
- */
-
 public class RobotCustomer extends Thread {
 
     @Autowired
@@ -21,7 +17,8 @@ public class RobotCustomer extends Thread {
         for (Thread thread : threadSet) {
             System.out.println("Thread name: " + thread.getName());
             if ( thread.getName().equals(Thread.currentThread().getName()) ) {
-                thread.interrupt();
+
+                    thread.interrupt();
             }
         }
         logSimulatorService.generateLog();

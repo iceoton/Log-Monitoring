@@ -7,9 +7,11 @@ import com.ascend.tmn.scouter.model.PrepaidLog;
 import org.apache.log4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class LogSimulatorServiceImpl implements LogSimulatorService {
@@ -73,8 +75,6 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
     }
 
 
-
-
     private void randomSleep() {
         this.sleepTime = (long) (Math.random() * (this.upperRandomSleepTimeRange - this.lowerRandomSleepTimeRange)) + this.lowerRandomSleepTimeRange;
     }
@@ -104,57 +104,92 @@ public class LogSimulatorServiceImpl implements LogSimulatorService {
 //        logLine.append("Thread name: ");
 //        logLine.append(Thread.currentThread().getName());
 //        logLine.append(separator);
-        logLine.append(this.getClass().getPackage().toString().replace("package ",""));
+        logLine.append(this.getClass().getPackage().toString().replace("package ", ""));
         logLine.append("Message: ");
         logLine.append(this.message);
         logLine.append(separator);
         logLine.append("Sleep time: ");
         logLine.append(this.sleepTime);
         logLine.append(" ms");
-        logger.setLevel(Level.INFO);
-        logger.info(logLine);
+        //logger.setLevel(Level.INFO);
+        //logger.debug(logLine);
+
+        double rand = Math.random();
+        if (rand <= 0.05) {
+            logger.setLevel(Level.ERROR);
+            logger.error(logLine);
+        } else if (rand <= 0.15) {
+            logger.setLevel(Level.DEBUG);
+            logger.debug(logLine);
+        } else {
+            logger.setLevel(Level.INFO);
+            logger.info(logLine);
+        }
 
     }
+
     private synchronized void writeLogKios() {
         final String separator = " : ";
         StringBuilder logLine = new StringBuilder();
         logLine.append(Thread.currentThread().getName());
         logLine.append(" SystemOut     O ");
-        if(this.isHibernate){
+        Level logLevel = this.randomLogLevel();
+        if (this.isHibernate) {
             logLine.append("Hibernate: ");
             logLine.append(this.message);
-        }else{
+        } else {
             logLine.append("WebContainer");
             logLine.append(separator);
             logLine.append("4");
             logLine.append(separator);
             logLine.append(this.getClass().getSimpleName());
             logLine.append(separator);
-            logLine.append(" INFO");
+            //logLine.append(" INFO");
+            logLine.append(" " + logLevel.toString());
             logLine.append(separator);
             logLine.append("85");
             logLine.append(separator);
             logLine.append(this.message);
         }
-        logger.info(logLine);
+        logger.setLevel(logLevel);
+        if(logLevel.equals(Level.ERROR)) {
+            logger.error(logLine);
+        } else if(logLevel.equals(Level.DEBUG)) {
+            logger.debug(logLine);
+        } else {
+            logger.info(logLine);
+        }
 
 
     }
 
     private void setUpLog4J() {
         try {
-            if("prepaid".equalsIgnoreCase(config.getTableName())) {
+            if ("prepaid".equalsIgnoreCase(config.getTableName())) {
                 layout = new PatternLayout("%-5p %d{yyyy-MM-dd HH:mm:ss,SSS} %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/prepaidLog.log");
-            }else if("kios".equalsIgnoreCase(config.getTableName())){
+            } else if ("kios".equalsIgnoreCase(config.getTableName())) {
                 layout = new PatternLayout("[%d{dd/MM/YY HH:mm:ss:SSS} ICT] %m%n");
                 fileAppender = new RollingFileAppender(layout, "/data/logs/LogSimulator/kioskLog.log");
             }
 
-        }catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         logger.addAppender(fileAppender);
+    }
+
+    private Level randomLogLevel(){
+        double rand = Math.random();
+        Level[] levels = {Level.INFO, Level.DEBUG, Level.ERROR};
+        int index = 0;
+        if (rand <= 0.05) {
+            index = 2;
+        } else if (rand <= 0.15) {
+            index = 1;
+        }
+
+        return levels[index];
     }
 
 }
