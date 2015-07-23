@@ -1,0 +1,14 @@
+Jenkins
+1.คลิก ‘New Item’
+2.ใส่ ‘Item name’
+3.เลือก ‘Maven Project’
+4. ในหัวข้อ ‘Source Code Management’ เลือก > ‘Git’
+5.ใส่ที่อยู่ Repository
+6.ในหัวข้อ ‘Build Triggers’ เลือก Poll SCM อย่างเดียว(ตอนนี้เลือกแบบนี้)
+7.ใต้ ‘Poll SCM’  ‘Schedule’  ใส่   * * * * * 
+8. หัวข้อ ‘Build’ ตรง root POM ใส่ที่อยู่ของ POM.xml  ซึ่งจะอยู่ใน Git repository
+9. ในหัวข้อ ‘Post step’ เลือกรูปแบบการ ‘Run’ ที่ต้องการ
+10. คลิก ‘Add Post-Build Step’ เลือก ‘Execute Shell’(ตอนนี้เลือกแบบนี้)
+11.ตรง ‘Command’ ใต้ ‘Execute Shell’ ใส่
+ rpmbuild --define="vers ${BUILD_NUMBER}" -ba "/var/lib/jenkins/war.spec" (ตอนนี้เป็นแบบนี้ สามารถเปลี่ยนpath file ได้)
+12. คลิก Apply และ คลิก Save ….จบ
