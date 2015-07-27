@@ -116,7 +116,7 @@ You need to use your Amazon SES SMTP credentials to send email through Amazon SE
 ----------
 
 
-Example: Sending Email from Gmail
+####Example: Sending Email from Gmail
 
 ``` watcher.actions.email.service.account:
     gmail_account:
@@ -260,3 +260,17 @@ And
 [Read More](https://www.elastic.co/guide/en/watcher/current/actions.html)
 
 ------------------------
+###Delete the Watch
+To remove the watch, use the [DELETE watch](https://www.elastic.co/guide/en/watcher/current/api-rest.html#api-rest-delete-watch) API:
+
+`curl -XDELETE 'http://localhost:9200/_watcher/watch/<watch's name>'`
+
+Example :
+
+> curl -u watcher:watcher -XDELETE 'http://localhost:9200/_watcher/watch/kiosk_timeout'
+
+have to use username:password when you installed the shield plugin.
+
+#####Read More : [Integrating Watcher with Shield](https://www.elastic.co/guide/en/watcher/current/shield-integration.html)
+-----------
+#[Source](https://www.elastic.co/guide/en/watcher/current/index.html)
