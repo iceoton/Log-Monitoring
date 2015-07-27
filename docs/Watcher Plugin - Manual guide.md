@@ -17,8 +17,7 @@ All you need to use Watcher is:
  1. Run **`bin/plugin -i`** from **`HOME`** to install the License plugin:
  >bin/plugin -i elasticsearch/license/latest
  
-
- ![enter image description here](https://www.elastic.co/guide/en/watcher/current/images/icons/note.png)  
+ ![note](https://www.elastic.co/guide/en/watcher/current/images/icons/note.png)  
     
     You need to install the License and Watcher plugins on each node in
      your cluster
@@ -34,5 +33,217 @@ All you need to use Watcher is:
 
 
 ----------
+###Configuring Watcher to Send Email
 ####Sending Email from Gmail
-Use the following email account settings to send email from the **Gmail** SMTP service:
+Use the following email account settings to send email from the [**Gmail**](https://mail.google.com/mail/u/0/#inbox) SMTP service:
+```watcher.actions.email.service.account:  
+     gmail_account: 
+        profile: gmail 
+        smtp:
+            auth: true
+            starttls.enable: true
+            host: smtp.gmail.com
+            port: 587
+            user: <username>
+            password: <password>
+ ```
+
+If you get an authentication error that indicates that you need to continue the sign-in process from a web browser when Watcher attempts to send email, you need to configure Gmail to [Allow Less Secure Apps to access your account](https://support.google.com/accounts/answer/6010255?hl=en).
+
+If two-step verification is enabled for your account, you must generate and use a unique App Password to send email from Watcher.[See Sign in using App Passwords](https://support.google.com/accounts/answer/185833?hl=en) for more information.
+
+####Sending Email from Outlook
+Use the following email account settings to send email action from the [Outlook.com](https://www.outlook.com/) SMTP service:
+
+```watcher.actions.email.service.account:
+    outlook_account:
+        profile: outlook
+        smtp:
+            auth: true
+            starttls.enable: true
+            host: smtp-mail.outlook.com
+            port: 587
+            user: <username>
+            password: <password>
+```
+ ![Note](https://www.elastic.co/guide/en/watcher/current/images/icons/note.png)
+ 
+ You need to use a unique App Password if two-step verification is enabled. See [App passwords and two-step verification](http://windows.microsoft.com/en-us/windows/app-passwords-two-step-verification) for more information. 
+
+####Sending Email from Exchange
+Use the following email account settings to send email action from Microsoft Exchange:
+
+```watcher.actions.email.service.account:
+    exchange_account:
+        profile: outlook
+        email_defaults:
+          from: <email address of service account>  ----1
+        smtp:
+            auth: true
+            starttls.enable: true
+            host: <your exchange server>
+            port: 587
+            user: <email address of service account>  ----2
+            password: <password>
+```
+![1](https://www.elastic.co/guide/en/watcher/current/images/icons/callouts/1.png)  Some organizations configure Exchange to validate that the from field is a valid local email account.
+
+----------
+![2](https://www.elastic.co/guide/en/watcher/current/images/icons/callouts/2.png) 
+Many organizations support use of your email address as your username, though it is a good idea to check with your system administrator if you receive authentication-related failures.
+
+####Sending Email from Amazon SES
+Use the following email account settings to send email from the [Amazon Simple Email Service](http://aws.amazon.com/ses) (SES) SMTP service:
+
+```watcher.actions.email.service.account:
+    ses_account:
+        smtp:
+            auth: true
+            starttls.enable: true
+            starttls.required: true
+            host: email-smtp.us-east-1.amazonaws.com ----1
+            port: 587
+            user: <username>
+            password: <password>
+```
+![1](https://www.elastic.co/guide/en/watcher/current/images/icons/callouts/1.png) **`smtp.host`** varies depending on the region
+
+![Note](https://www.elastic.co/guide/en/watcher/current/images/icons/note.png)
+
+You need to use your Amazon SES SMTP credentials to send email through Amazon SES. For more information, see [Obtaining Your Amazon SES SMTP Credentials](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/smtp-credentials.html).
+
+
+----------
+
+
+Example: Sending Email from Gmail
+
+``` watcher.actions.email.service.account:
+    gmail_account:
+        profile: gmail
+        smtp:
+            auth: true
+            starttls.enable: true
+            host: smtp.gmail.com
+            port: 587
+            user: scouter.ascend@gmail.com
+            password: sprintfail
+```
+
+
+**Table  Email Account Attributes**  
+
+
+Name  	      |  Required     | Default	     |  Description  
+-----------  |  -----------  |  ----------- |  ----------- 
+profile | 	 no		    | standard | The[profile](https://www.elastic.co/guide/en/watcher/current/email-services.html#email-profile) to use to build the MIME messages that are sent from the account. Valid values: **`standard`** (default), **`gmail`** and **`outlook`**.  email_defaults.* | no | - |  An optional set of email attributes to use as defaults for the emails sent from the account. See [Email Action Attributes](https://www.elastic.co/guide/en/watcher/current/actions.html#email-action-attributes) for the supported attributes. for the possible email attributes)
+smtp.auth|no|false|When **`true`**, attempt to authenticate the user using the AUTH command.
+smtp.host|yes|-|The SMTP server to connect to.
+smtp.port|no|25|The SMTP server port to connect to.
+smtp.user|yes|-|The user name for SMTP.
+smtp.password|no|-|The password for the specified SMTP user.
+smtp.starttls.enable|no|false|When **`true`**, enables the use of the **`STARTTLS`** command (if supported by the server) to switch the connection to a TLS-protected connection before issuing any login commands. Note that an appropriate trust store must configured so that the client will trust the server’s certificate. Defaults to **`false`**.
+smtp.*|no|-|SMTP attributes that enable fine control over the SMTP protocol when sending messages. See [com.sun.mail.smtp](https://javamail.java.net/nonav/docs/api/com/sun/mail/smtp/package-summary.html) for the full list of SMTP properties you can set.
+
+[Read More](https://www.elastic.co/guide/en/watcher/current/email-services.html)
+
+------------------
+### Trigger, Condution, Action  for sending Email  
+In  ‘…...’ is JSON
+####Example
+
+```
+curl -u watcher:watcher -XPUT 'http://localhost:9200/_watcher/watch/kiosk_timeout' -d '{---1
+  "trigger" :{ "schedule" : {"hourly" : { "minute" : 0 } }},   ---2
+  "input" : {
+    "search" : {
+      "request" : {
+        "indices" : [ "kiosk-*" ], ---3
+        "body" : {
+          "query" : {
+           "match" : { "message": "java.net.SocketTimeoutException" } ---4
+          },
+          "filter" : {
+              "range" : {"@timestamp" : {"gte" : "now-1h"}} ---5
+          }
+        }
+      }
+    }
+  },
+  "condition" : {
+    "compare" : { 
+      "ctx.payload.hits.total" : { "gte" : 10 } ---6
+      }
+   },
+  "actions" : {
+    "email_timeout_kiosk" : { ---7
+      "email" : {
+        "to" : "scouter.ascend@gmail.com", ---8
+        "subject" : "you have {{ctx.payload.hits.total}} java.net.SocketTimeoutException ", ---9
+        "body" : "pleace, check your log", ---10
+          "attach_data" : true, ---11
+          "priority" : "high" ---12
+      }
+    }
+  }
+}'
+```
+ 1. -u watcher:watcher -XPUT   'http://localhost:9200/_watcher/watch/kiosk_timeout' -d '{.....}’
+> -u watcher:watcher is the username:password for Watcher
+> -XPUT is Input command
+> kiosk_timeout is watcher's name of action
+> -d'{.....}’  in ’{}’ is command
+
+
+2. "trigger" :{ "schedule" : {"hourly" : { "minute" : 0 } }}, 
+is Watcher  trigger schedule
+in the example, It will trigger every hour such as 9.00 , 12.00, 15.00 
+[Read More](https://www.elastic.co/guide/en/watcher/current/trigger.html)
+    
+3. "indices" : [ "kiosk-*" ],  
+Watching at Kiosk's indices
+
+4. "query" : { 
+"match" : { "message": "java.net.SocketTimeoutException" } },
+Query tag name "message" 
+Search the word "java.net.SocketTimeoutException"
+Readmore
+[Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
+
+5. "filter" : { "range" : {"@timestamp" : {"gte" : "now-1h"}}}
+tag "@timestamp” is time compare 
+ "gte" is greater than equal
+"now-1h" is now to 1 hour ago
+Read More[Range Filter]( https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
+And
+[Filter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filtered-query.html)
+
+6. "condition" : {"compare" : { "ctx.payload.hits.total" : { "gte" : 10 }  } },
+   #เป็นการกำหนดเงื่อนไข   จากตัวอย่าง จะใช้ 
+"compare" เปรียบเทียบ
+ "ctx.payload.hits.total" คือ จำนวนpayload ทั้งหมด
+"gte" คือบอกว่า มากกว่าเท่ากับ  ในตัวอย่างคือ  ถ้ามากกว่าเท่ากับ 10
+ดูเพิมเติมที่ 
+https://www.elastic.co/guide/en/watcher/current/condition.html
+
+
+7.  "email_timeout_kiosk"   #คือ ID ของ Action  สามารถเปลี่ยนชื่อได้
+
+
+8. "to" : "scouter.ascend@gmail.com",  #Email ที่ต้องการจะส่ง
+
+9.  "subject" : "you have {{ctx.payload.hits.total}} java.net.SocketTimeoutException ",
+  #เป็นการเขียน subject ของ  Email  
+  {{ctx.payload.hits.total}}  จะบอกจำนวนpayload ทั้งหมดในเวลาที่กำหนด
+
+
+10. "body" : "pleace, check your log", 
+#เป็นส่วนเนื้อหาที่เราต้องการจะแจ้ง
+
+11. "attach_data" : true, 
+#เป็นการให้แนบไฟล์log ที่เราต้องการให้แจ้ง
+
+12. "priority" : "high" 
+#เป็นการกำหนด priority ให้กับ action นี้
+
+
