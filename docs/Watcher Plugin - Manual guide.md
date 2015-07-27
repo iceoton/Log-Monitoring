@@ -188,62 +188,75 @@ curl -u watcher:watcher -XPUT 'http://localhost:9200/_watcher/watch/kiosk_timeou
   }
 }'
 ```
- 1. -u watcher:watcher -XPUT   'http://localhost:9200/_watcher/watch/kiosk_timeout' -d '{.....}’
-> -u watcher:watcher is the username:password for Watcher
-> -XPUT is Input command
-> kiosk_timeout is watcher's name of action
+
+
+1)  `-u watcher:watcher -XPUT 'http://localhost:9200/_watcher/watch/kiosk_timeout' -d '{.....}’`
+
+> -u watcher:watcher is the username:password for Watcher  
+> -XPUT is Input command  
+> kiosk_timeout is watcher's name of action  
 > -d'{.....}’  in ’{}’ is command
 
 
-2. "trigger" :{ "schedule" : {"hourly" : { "minute" : 0 } }}, 
-is Watcher  trigger schedule
-in the example, It will trigger every hour such as 9.00 , 12.00, 15.00 
-[Read More](https://www.elastic.co/guide/en/watcher/current/trigger.html)
-    
-3. "indices" : [ "kiosk-*" ],  
-Watching at Kiosk's indices
+2)  `"trigger" :{ "schedule" : {"hourly" : { "minute" : 0 } }},`
 
-4. "query" : { 
-"match" : { "message": "java.net.SocketTimeoutException" } },
-Query tag name "message" 
-Search the word "java.net.SocketTimeoutException"
-Readmore
+> is Watcher  trigger schedule
+> in the example, It will trigger every hour such as 9.00 , 12.00, 15.00
+
+[Read More](https://www.elastic.co/guide/en/watcher/current/trigger.html)
+
+
+3)  `"indices" : [ "kiosk-*" ],`  
+> Watching at Kiosk's indices
+
+
+
+4)  `"query" : { "match" : { "message": "java.net.SocketTimeoutException" } },`
+> Query tag name "message"   
+> Search the word "java.net.SocketTimeoutException"  
+
+Read More : 
 [Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
 
-5. "filter" : { "range" : {"@timestamp" : {"gte" : "now-1h"}}}
-tag "@timestamp” is time compare 
- "gte" is greater than equal
-"now-1h" is now to 1 hour ago
-Read More[Range Filter]( https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
+
+
+5)  `"filter" : { "range" : {"@timestamp" : {"gte" : "now-1h"}}}`
+> tag "@timestamp” is time compare  
+> "gte" is greater than equal  
+> "now-1h" is now to 1 hour ago  
+
+Read More :
+[Range Filter]( https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-filter.html)
 And
 [Filter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filtered-query.html)
 
-6. "condition" : {"compare" : { "ctx.payload.hits.total" : { "gte" : 10 }  } },
-   #เป็นการกำหนดเงื่อนไข   จากตัวอย่าง จะใช้ 
-"compare" เปรียบเทียบ
- "ctx.payload.hits.total" คือ จำนวนpayload ทั้งหมด
-"gte" คือบอกว่า มากกว่าเท่ากับ  ในตัวอย่างคือ  ถ้ามากกว่าเท่ากับ 10
-ดูเพิมเติมที่ 
-https://www.elastic.co/guide/en/watcher/current/condition.html
+6)  `"condition" : {"compare" : { "ctx.payload.hits.total" : { "gte" : 10 }  } },`
+> "ctx.payload.hits.total" is total payload
+"gte" is greater than equal
+
+[Read More](https://www.elastic.co/guide/en/watcher/current/condition.html)
 
 
-7.  "email_timeout_kiosk"   #คือ ID ของ Action  สามารถเปลี่ยนชื่อได้
+7)  `"email_timeout_kiosk"`   
+> is Action's name
+
+8) `"to" : "scouter.ascend@gmail.com",`
+> is recipient Email
+
+9)  `"subject" : "you have {{ctx.payload.hits.total}} java.net.SocketTimeoutException ",`
+> is content in subject from  
+> {{ctx.payload.hits.total}} is total payload at the time
 
 
-8. "to" : "scouter.ascend@gmail.com",  #Email ที่ต้องการจะส่ง
+10) `"body" : "pleace, check your log",` 
+> is content in body from
 
-9.  "subject" : "you have {{ctx.payload.hits.total}} java.net.SocketTimeoutException ",
-  #เป็นการเขียน subject ของ  Email  
-  {{ctx.payload.hits.total}}  จะบอกจำนวนpayload ทั้งหมดในเวลาที่กำหนด
+11) `"attach_data" : true,` 
+> attach the log in Email
 
+12) `"priority" : "high"`
+> is priority level of action 
 
-10. "body" : "pleace, check your log", 
-#เป็นส่วนเนื้อหาที่เราต้องการจะแจ้ง
+[Read More](https://www.elastic.co/guide/en/watcher/current/actions.html)
 
-11. "attach_data" : true, 
-#เป็นการให้แนบไฟล์log ที่เราต้องการให้แจ้ง
-
-12. "priority" : "high" 
-#เป็นการกำหนด priority ให้กับ action นี้
-
-
+------------------------
