@@ -15,11 +15,11 @@ go to logstash-1.5.2 folder make  conf folder
     $mkdir conf 
 ```
 
-then  copy script file for each  script type : 
+then  copy script file for each  log format  : 
 
-- [indexer kiosk script](../conf/kiosk-indexer.conf)     or 
-- [indexer prepaid script](../conf/prepaid-indexer.conf)
-
+- [indexer kiosk script](../conf/kiosk-indexer.conf)     
+- [indexer prepaid script](../conf/prepaid-indexer.conf)  
+- [make new log format](./How to add new log format.md) 
 copy to this folder go out then start it 
 ```
     $cd ..
