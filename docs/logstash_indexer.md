@@ -17,7 +17,7 @@ go to logstash-1.5.2 folder make  conf folder
 
 then  copy script file for each  script type : [script explanation](expland.conf)
 
-- [indexer kiosk script](fil.script)     or 
+- [indexer kiosk script](../conf/kiosk-indexer.conf)     or 
 - [indexer prepaid script](file.script)
 
 copy to this folder go out then start it 
