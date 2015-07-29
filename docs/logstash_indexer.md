@@ -15,10 +15,10 @@ go to logstash-1.5.2 folder make  conf folder
     $mkdir conf 
 ```
 
-then  copy script file for each  script type : [script explanation](expland.conf)
+then  copy script file for each  script type : 
 
 - [indexer kiosk script](../conf/kiosk-indexer.conf)     or 
-- [indexer prepaid script](file.script)
+- [indexer prepaid script](../conf/prepaid-indexer.conf)
 
 copy to this folder go out then start it 
 ```
