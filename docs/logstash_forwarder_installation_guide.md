@@ -19,7 +19,7 @@ then  copy script file for each  script format :
 
 - [forwarder kiosk script](../conf/prepaid-log-forworder.conf)  
 - [forwarder prepaid script](../conf/kiosk-log-forworder.conf)
-
+- [make new log format](./How to  add new log format.md)
 
 copy to this folder go out then start it
 ```
