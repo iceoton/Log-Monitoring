@@ -22,7 +22,7 @@ then  copy script file for each  log format  :
 
 - [indexer kiosk script](../conf/kiosk-indexer.conf)
 - [indexer prepaid script](../conf/prepaid-indexer.conf)  
-- [make new log format](./log_format_add_new_format.md)
+- [make new log format](log_format_add_new_format.md)
 
 copy to this folder go out then start it
 ```
