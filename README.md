@@ -7,7 +7,8 @@
 
 ##Elasticsearch
 - [**Elasticsearch setup with repositories**](https://www.elastic.co/guide/en/elasticsearch/reference/1.6/setup-repositories.html)
-- ####Plugin
+	
+	###Plugin
 	- [Shield Plugin](./docs/Shield Plugin - manual guide.md)
 	- [Watcher Plugin](./docs/Watcher Plugin - Manual guide.md)
 
