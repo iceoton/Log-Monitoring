@@ -17,7 +17,7 @@ go to logstash-1.5.2 folder make  conf folder
 
 then  copy script file for each  script format :
 
-- [forwarder kiosk script](../conf/prepaid-log-forworder.conf)  
+- [forwarder kiosk script](../conf/prepaid-log-forwarder.conf)  
 - [forwarder prepaid script](../conf/kiosk-log-forworder.conf)
 - [make new log format](./How to  add new log format.md)
 
